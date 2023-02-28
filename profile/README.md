@@ -7,4 +7,5 @@
 
 ## Artifacts
 | Repository | Download Latest | Status |
-| :-- | :-- | :-: |
+| :--- | :--- | :---: |
+| [AdvancedRails](https://github.com/Kotatsu-RTM/AdvancedRails) | https://github.com/Kotatsu-RTM/AdvancedRails/releases/latest | [![Build](https://github.com/Kotatsu-RTM/AdvancedRails/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Kotatsu-RTM/AdvancedRails/actions/workflows/build.yml) |
