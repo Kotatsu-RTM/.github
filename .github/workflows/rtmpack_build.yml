@@ -26,6 +26,14 @@ jobs:
         id: build_with_gradle
         run: ./gradlew build
 
+      - name: Upload artifact
+        if: steps.build_with_gradle.outcome == 'success'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Artifact
+          path: ./build/libs/*
+          retention-days: 30
+
       - name: Delete old CI release
         id: delete_old_ci_release
         if: steps.build_with_gradle.outcome == 'success' && contains(github.ref, github.event.repository.default_branch)
