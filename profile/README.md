@@ -11,3 +11,5 @@
 | [AdvancedRails](https://github.com/Kotatsu-RTM/AdvancedRails) | https://github.com/Kotatsu-RTM/AdvancedRails/releases/latest | [![Build](https://github.com/Kotatsu-RTM/AdvancedRails/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Kotatsu-RTM/AdvancedRails/actions/workflows/build.yml) |
 | [AdvancedTrainDetector](https://github.com/Kotatsu-RTM/AdvancedTrainDetector) | https://github.com/Kotatsu-RTM/AdvancedTrainDetector/releases/latest | [![Build](https://github.com/Kotatsu-RTM/AdvancedTrainDetector/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Kotatsu-RTM/AdvancedTrainDetector/actions/workflows/build.yml) |
 | [fixRTM](https://github.com/Kotatsu-RTM/fixRTM) | https://github.com/Kotatsu-RTM/fixRTM/releases/latest | [![Build](https://github.com/Kotatsu-RTM/fixRTM/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Kotatsu-RTM/fixRTM/actions/workflows/build.yml) |
+| [KotatsuLib](https://github.com/Kotatsu-RTM/KotatsuLib) | 準備中 | 準備中 |
+| [RTM GLSL](https://github.com/Kotatsu-RTM/rtm-glsl) | 準備中 | 準備中 |
