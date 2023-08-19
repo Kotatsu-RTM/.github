@@ -5,21 +5,6 @@ on:
         type: boolean
         required: false
         default: false
-      NexusUsername:
-        type: string
-        required: false
-      NexusPassword:
-        type: string
-        required: false
-      SigningKeyId:
-        type: string
-        required: false
-      SigningKey:
-        type: string
-        required: false
-      SigningKeyPassword:
-        type: string
-        required: false
 
 jobs:
   reusable_rtmpack_build:
@@ -57,11 +42,11 @@ jobs:
       - name: Publish
         if: ${{ inputs.Publishing }} == 'true'
         env:
-          NexusUsername: ${{ inputs.NexusUsername }}
-          NexusPassword: ${{ inputs.NexusPassword }}
-          SigningKeyId: ${{ inputs.SigningKeyId }}
-          SigningKey: ${{ inputs.SigningKey }}
-          SigningKeyPassword: ${{ inputs.SigningKeyPassword }}
+          NexusUsername: ${{ secrets.NexusUsername }}
+          NexusPassword: ${{ secrets.NexusPassword }}
+          SigningKeyId: ${{ secrets.SigningKeyId }}
+          SigningKey: ${{ secrets.SigningKey }}
+          SigningKeyPassword: ${{ secrets.SigningKeyPassword }}
         run: ./gradlew publish
 
       - name: Delete old CI release
