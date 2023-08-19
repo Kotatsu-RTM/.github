@@ -53,8 +53,8 @@ jobs:
       - name: Publish
         if: ${{ inputs.Publishing }} == 'true'
         env:
-          NexusUsername: ${{ secrets.NexusUsername }}
-          NexusPassword: ${{ secrets.NexusPassword }}
+          RepositoryUsername: ${{ secrets.NexusUsername }}
+          RepositoryPassword: ${{ secrets.NexusPassword }}
           SigningKeyId: ${{ secrets.SigningKeyId }}
           SigningKey: ${{ secrets.SigningKey }}
           SigningKeyPassword: ${{ secrets.SigningKeyPassword }}
