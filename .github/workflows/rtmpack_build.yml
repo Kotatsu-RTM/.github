@@ -5,6 +5,17 @@ on:
         type: boolean
         required: false
         default: false
+    secrets:
+      NexusUsername:
+        required: false
+      NexusPassword:
+        required: false
+      SigningKeyId:
+        required: false
+      SigningKey:
+        required: false
+      SigningKeyPassword:
+        required: false
 
 jobs:
   reusable_rtmpack_build:
