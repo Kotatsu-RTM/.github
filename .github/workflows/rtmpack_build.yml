@@ -34,6 +34,10 @@ jobs:
           path: ./build/libs/*
           retention-days: 30
 
+      - name: Publish
+        if: ${{ env.Publishing }} == 'true'
+        run: ./gradlew publish
+
       - name: Delete old CI release
         id: delete_old_ci_release
         if: steps.build_with_gradle.outcome == 'success' && contains(github.ref, github.event.repository.default_branch)
