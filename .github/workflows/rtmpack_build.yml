@@ -35,7 +35,13 @@ jobs:
           retention-days: 30
 
       - name: Publish
-        if: ${{ env.Publishing }} == 'true'
+        if: ${{ inputs.Publishing }} == 'true'
+        env:
+          NexusUsername: ${{ inputs.NexusUsername }}
+          NexusPassword: ${{ inputs.NexusPassword }}
+          SigningKeyId: ${{ inputs.SigningKeyId }}
+          SigningKey: ${{ inputs.SigningKey }}
+          SigningKeyPassword: ${{ inputs.SigningKeyPassword }}
         run: ./gradlew publish
 
       - name: Delete old CI release
