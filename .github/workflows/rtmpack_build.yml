@@ -1,5 +1,25 @@
 on:
   workflow_call:
+    inputs:
+      Publishing:
+        type: boolean
+        required: false
+        default: false
+      NexusUsername:
+        type: string
+        required: false
+      NexusPassword:
+        type: string
+        required: false
+      SigningKeyId:
+        type: string
+        required: false
+      SigningKey:
+        type: string
+        required: false
+      SigningKeyPassword:
+        type: string
+        required: false
 
 jobs:
   reusable_rtmpack_build:
