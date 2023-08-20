@@ -6,9 +6,9 @@ on:
         required: false
         default: false
     secrets:
-      NexusUsername:
+      RepositoryUsername:
         required: false
-      NexusPassword:
+      RepositoryPassword:
         required: false
       SigningKeyId:
         required: false
@@ -53,8 +53,8 @@ jobs:
       - name: Publish
         if: ${{ inputs.Publishing }} == 'true'
         env:
-          RepositoryUsername: ${{ secrets.NexusUsername }}
-          RepositoryPassword: ${{ secrets.NexusPassword }}
+          RepositoryUsername: ${{ secrets.RepositoryUsername }}
+          RepositoryPassword: ${{ secrets.RepositoryPassword }}
           SigningKeyId: ${{ secrets.SigningKeyId }}
           SigningKey: ${{ secrets.SigningKey }}
           SigningKeyPassword: ${{ secrets.SigningKeyPassword }}
