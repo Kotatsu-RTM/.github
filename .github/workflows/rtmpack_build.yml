@@ -23,17 +23,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codes
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup JDK 8
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: zulu
           java-version: 8
           cache: gradle
 
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@v3
 
       - name: Add permission to Gradle wrapper
         run: chmod +x gradlew
@@ -44,7 +44,7 @@ jobs:
 
       - name: Upload artifact
         if: steps.build_with_gradle.outcome == 'success'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Artifact
           path: ./build/libs/*
@@ -63,7 +63,7 @@ jobs:
       - name: Delete old CI release
         id: delete_old_ci_release
         if: steps.build_with_gradle.outcome == 'success' && contains(github.ref, github.event.repository.default_branch)
-        uses: dev-drprasad/delete-older-releases@v0.2.1
+        uses: dev-drprasad/delete-older-releases@v0.3.4
         with:
           keep_latest: 0
           delete_tag_pattern: ci_release
@@ -72,7 +72,7 @@ jobs:
 
       - name: Create new CI release
         if: steps.delete_old_ci_release.outcome == 'success' && contains(github.ref, github.event.repository.default_branch)
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2
         with:
           name: CI release
           tag_name: ci_release
